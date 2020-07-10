@@ -19,7 +19,7 @@ import { Tag } from '../tags/tag.entity';
 import { Employee } from '../employee/employee.entity';
 import { OrganizationTeam } from '../organization-team/organization-team.entity';
 import { User } from '../user/user.entity';
-// import { OrganizationSprint } from '../organization-sprint/organization-sprint.entity';
+import { OrganizationSprint } from '../organization-sprint/organization-sprint.entity';
 
 @Entity('task')
 export class Task extends Base implements ITask {
@@ -95,16 +95,11 @@ export class Task extends Base implements ITask {
 	@Column()
 	readonly creatorId?: string;
 
-  // @ApiProperty({ type: OrganizationSprint })
-  // @ManyToOne((type) => OrganizationSprint, {
-  //   nullable: true,
-  //   onDelete: 'CASCADE'
-  // })
-  // @JoinColumn()
-  // sprint?: OrganizationSprint;
-
-  // @ApiProperty({ type: String, readOnly: true })
-  // @RelationId((organizationSprint: OrganizationSprint) => organizationSprint.tasks)
-  // @Column()
-  // readonly sprintId?: string;
+	@ApiProperty({ type: OrganizationSprint })
+	@ManyToOne((type) => OrganizationSprint, {
+		nullable: true,
+		onDelete: 'CASCADE'
+	})
+	@JoinColumn()
+	organizationSprint?: OrganizationSprint;
 }

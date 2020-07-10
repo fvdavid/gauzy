@@ -122,8 +122,8 @@ export class OrganizationProjects extends TenantBase
 	@Column({ nullable: true })
 	owner: string;
 
-  @ApiPropertyOptional( { type: OrganizationSprint } )
-  @OneToMany( ( type ) => OrganizationSprint, ( sprints ) => sprints.project )
-  @JoinColumn()
-  organizationSprints?: OrganizationSprint[];
+	@ApiPropertyOptional({ type: OrganizationSprint })
+	@OneToMany((type) => OrganizationSprint, (sprints) => sprints.project)
+	@JoinColumn()
+	organizationSprints?: OrganizationSprint[];
 }
