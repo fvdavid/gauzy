@@ -33,6 +33,7 @@ import { OrganizationTeamModule } from './organization-team/organization-team.mo
 import { OrganizationTeamEmployeeModule } from './organization-team-employee/organization-team-employee.module';
 import { OrganizationAwardsModule } from './organization-awards/organization-awards.module';
 import { OrganizationLanguagesModule } from './organization-languages/organization-languages.module';
+import { OrganizationSprintModule } from './organization-sprint/organization-sprint.module';
 import { ProposalModule } from './proposal/proposal.module';
 import { CountryModule } from './country/country.module';
 import { InviteModule } from './invite/invite.module';
@@ -231,6 +232,10 @@ import { HelpCenterAuthorModule } from './help-center-author/help-center-author.
 						path: '/organization-recurring-expense',
 						module: OrganizationRecurringExpenseModule
 					},
+          {
+            path: '/organization-sprint',
+            module: OrganizationSprintModule
+          },
 					{
 						path: '/employee-recurring-expense',
 						module: EmployeeRecurringExpenseModule
@@ -445,6 +450,7 @@ import { HelpCenterAuthorModule } from './help-center-author/help-center-author.
 		OrganizationVendorsModule,
 		OrganizationAwardsModule,
 		OrganizationLanguagesModule,
+    OrganizationSprintModule,
 		EmployeeRecurringExpenseModule,
 		OrganizationTeamModule,
 		OrganizationTeamEmployeeModule,
